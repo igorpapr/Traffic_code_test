@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -50,16 +51,11 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
         if(items.size() <= 5){
             return items;
         }
-        Random random = new Random();
-        int itemsSize = items.size();
 
-        while (selected.size() < 5){
-            int randomIndex = random.nextInt(itemsSize);
-            T element = items.get(randomIndex);
+        Collections.shuffle(items);
 
-            if(!selected.contains(element)){
-                selected.add(element);
-            }
+        for (int i = 0; i < 5; i++){
+            selected.add(items.get(i));
         }
         return selected;
     }
