@@ -1,5 +1,5 @@
 <%@ page isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--
   Created by IntelliJ IDEA.
   User: dan
@@ -15,7 +15,7 @@
 <body>
 <p>Test</p>
 
-<p>${test}</p>
+<p>${tests}</p>
 
 <form action="" method="post">
     <input type="hidden" name="action" value="back">

@@ -16,4 +16,11 @@ public class SingleChoice extends Question {
     public void setRightAnswer(byte rightAnswer) {
         this.rightAnswer = rightAnswer;
     }
+
+    @Override
+    public String toString() {
+        return "SingleChoice{" +
+                "rightAnswer=" + rightAnswer +
+                '}';
+    }
 }

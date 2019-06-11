@@ -17,7 +17,8 @@ public class ResultSetDao {
     }
 
     public ResultSet findAll() {
-        try (Connection connection = connector.getConnection()) {
+        Connection connection = connector.getConnection();
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL + table);
 
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -30,7 +31,8 @@ public class ResultSetDao {
     }
 
     public ResultSet findWhereBaseId(long id) {
-        try (Connection connection = connector.getConnection()) {
+        Connection connection = connector.getConnection();
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement( FIND_ALL + table+" WHERE baseid=? ");
 
             preparedStatement.setLong(1,id);

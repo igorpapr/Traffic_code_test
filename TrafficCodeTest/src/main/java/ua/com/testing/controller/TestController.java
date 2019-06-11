@@ -14,8 +14,7 @@ import java.sql.SQLException;
 public class TestController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/test.jsp");
-        requestDispatcher.forward(req, resp);
+
         Test test = new Test();
         try {
             test = new TestDaoImpl().getAllQuestions();
@@ -23,7 +22,10 @@ public class TestController extends HttpServlet {
             e.printStackTrace();
         }
 
-        req.getSession().setAttribute("tests", test);
+        req.getSession().setAttribute("tests", test.getQuestions());
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/test.jsp");
+        requestDispatcher.forward(req, resp);
     }
 
     @Override
