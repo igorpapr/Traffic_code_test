@@ -4,4 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>main</servlet-name>
+    <servlet-class>ua.com.testing.controller.MainController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>main</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
