@@ -9,11 +9,20 @@
     <servlet-name>main</servlet-name>
     <servlet-class>ua.com.testing.controller.MainController</servlet-class>
   </servlet>
-  
+
+  <servlet>
+    <servlet-name>test</servlet-name>
+    <servlet-class>ua.com.testing.controller.TestController</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>main</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  
-  
+
+  <servlet-mapping>
+    <servlet-name>test</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+
 </web-app>
