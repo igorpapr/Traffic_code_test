@@ -15,7 +15,7 @@ public class TestController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Test test = new Test();
+        Test test=null;
         try {
             test = new TestDaoImpl().getAllQuestions();
         } catch (SQLException e) {

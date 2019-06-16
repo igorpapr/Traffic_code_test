@@ -1,5 +1,7 @@
 package ua.com.testing.entity.question;
 
+import java.util.Arrays;
+
 public class Compliance extends Question {
 
     private String[] answers;
@@ -15,5 +17,12 @@ public class Compliance extends Question {
 
     public void setAnswers(String[] answers) {
         this.answers = answers;
+    }
+
+    @Override
+    public String toString() {
+        return "Compliance{" +
+                "answers=" + Arrays.toString(answers) +
+                "} " + super.toString();
     }
 }

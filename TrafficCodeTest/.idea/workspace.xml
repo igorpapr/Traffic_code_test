@@ -10,28 +10,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/com/testing/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ResultSetDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ResultSetDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Compliance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/MultipleChoice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Question.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/SingleChoice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/SingleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/SingleDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/TestDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/TestDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/Compliance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/Compliance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/MultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/MultipleChoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/SingleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/SingleChoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/test.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/com/testing/controller/TestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/dao/impl/ResultSetDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/com/testing/dao/impl/ResultSetDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/Compliance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/MultipleChoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/Question.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/SingleChoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/dao/impl/SingleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/com/testing/dao/impl/SingleDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/dao/impl/TestDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/com/testing/dao/impl/TestDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/question/Compliance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/question/Compliance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/question/MultipleChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/question/MultipleChoice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/question/SingleChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/com/testing/entity/question/SingleChoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/traffic-code-test/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/controller/TestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/dao/impl/ResultSetDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/dao/impl/ResultSetDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/entity/Compliance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/entity/MultipleChoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/entity/Question.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/entity/SingleChoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/entity/question/SingleChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/traffic-code-test/WEB-INF/classes/ua/com/testing/entity/question/SingleChoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/traffic-code-test/jsp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/traffic-code-test/jsp/test.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,34 +62,40 @@
     <session id="-1048492801">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.50" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="5" />
+          <entry key="java" value="18" />
           <entry key="jsp" value="1" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="5" />
+          <entry key="JAVA" value="18" />
           <entry key="JSP" value="1" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="24" />
+          <entry key="dummy" value="43" />
+          <entry key="java" value="940" />
           <entry key="jsp" value="1" />
+          <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="24" />
+          <entry key="JAVA" value="940" />
           <entry key="JSP" value="1" />
+          <entry key="PLAIN_TEXT" value="56" />
         </counts>
       </usages-collector>
     </session>
@@ -105,19 +103,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/TestDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+            <state relative-caret-position="270">
+              <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/TestDaoImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+              <folding>
+                <element signature="e#277#278#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,62 +126,68 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/SingleDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="66">
+              <caret line="32" column="15" lean-forward="true" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/GenericDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ResultSetDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+            <state relative-caret-position="763">
+              <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/controller/MainController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/MultipleDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="151">
+              <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ComplDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/controller/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/controller/TestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/Question.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+            <state relative-caret-position="323">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/SingleChoice.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/Compliance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/test.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="10" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="10" />
+            <state relative-caret-position="306">
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -204,9 +211,16 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/GenericDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/GenericDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ResultSetDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/test.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/MultipleChoice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/MultipleDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/SingleDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/SingleChoice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ResultSetDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/Compliance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ComplDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/TestDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/testing/controller/TestController.java" />
       </list>
     </option>
@@ -234,8 +248,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1614" />
-    <option name="height" value="878" />
+    <option name="width" value="1615" />
+    <option name="height" value="880" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -243,8 +257,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -348,9 +362,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Constructor" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560712546326" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -364,7 +382,59 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TestDaoImpl">
+    <configuration name="ComplDaoImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ua.com.testing.dao.impl.ComplDaoImpl" />
+      <module name="traffic-code-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.testing.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultipleDaoImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ua.com.testing.dao.impl.MultipleDaoImpl" />
+      <module name="traffic-code-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.testing.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SingleDaoImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ua.com.testing.dao.impl.SingleDaoImpl" />
+      <module name="traffic-code-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.testing.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDaoImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ua.com.testing.dao.impl.TestDaoImpl" />
+      <module name="traffic-code-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.com.testing.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.94" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -436,6 +506,21 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Unnamed" />
+      <item itemvalue="Application.MultipleDaoImpl" />
+      <item itemvalue="Application.SingleDaoImpl" />
+      <item itemvalue="Application.ComplDaoImpl" />
+      <item itemvalue="Application.TestDaoImpl" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestDaoImpl" />
+        <item itemvalue="Application.ComplDaoImpl" />
+        <item itemvalue="Application.SingleDaoImpl" />
+        <item itemvalue="Application.MultipleDaoImpl" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -450,16 +535,25 @@
       <workItem from="1560263875469" duration="2372000" />
       <workItem from="1560268327143" duration="238000" />
       <workItem from="1560270944780" duration="7941000" />
-      <workItem from="1560282253726" duration="1326000" />
+      <workItem from="1560282253726" duration="1944000" />
+      <workItem from="1560690157244" duration="1484000" />
+      <workItem from="1560702652299" duration="7985000" />
     </task>
+    <task id="LOCAL-00001" summary="jsp view">
+      <created>1560286143138</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560286143138</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7302000" />
+    <option name="totallyTimeSpent" value="17389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -467,11 +561,11 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.26107383" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.26912752" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="1" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.3295082" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="5" />
@@ -482,7 +576,7 @@
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="bottom" id="SonarLint" order="13" />
+      <window_info anchor="bottom" id="SonarLint" order="13" weight="0.3286119" />
       <window_info anchor="bottom" id="Application Servers" order="14" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Maven Projects" order="1" />
@@ -501,21 +595,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="jsp view" />
+    <option name="LAST_COMMIT_MESSAGE" value="jsp view" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Compliance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Question.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Compliance.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5287">
@@ -537,55 +623,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/SingleChoice.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/MultipleChoice.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/GenericDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
+        <state relative-caret-position="519">
           <caret line="87" selection-start-line="87" selection-end-line="87" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/SingleChoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/TestDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/MultipleChoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/SingleDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -596,17 +649,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ResultSetDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        <state relative-caret-position="170">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -619,15 +665,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/SingleChoice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        <state relative-caret-position="219">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/MultipleChoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/MultipleDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/SingleDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="32" column="15" lean-forward="true" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ResultSetDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/ComplDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding>
+            <element signature="e#277#278#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/controller/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
+        <state relative-caret-position="102">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/dao/impl/TestDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/Compliance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/testing/entity/question/Question.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>

@@ -21,6 +21,6 @@ public class SingleChoice extends Question {
     public String toString() {
         return "SingleChoice{" +
                 "rightAnswer=" + rightAnswer +
-                '}';
+                "} " + super.toString();
     }
 }
