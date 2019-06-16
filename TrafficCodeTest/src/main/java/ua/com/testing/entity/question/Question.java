@@ -40,6 +40,14 @@ public abstract class Question {
         this.questions = questions;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Question{" +

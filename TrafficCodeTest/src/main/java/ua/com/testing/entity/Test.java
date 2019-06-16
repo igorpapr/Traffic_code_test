@@ -17,6 +17,9 @@ public class Test {
         return questions;
     }
 
+    public int getSize() {
+        return questions.size();
+    }
 
     @Override
     public String toString() {

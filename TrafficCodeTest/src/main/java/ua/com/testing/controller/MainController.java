@@ -17,6 +17,6 @@ public class MainController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/test");
+        resp.sendRedirect("/test?question=1");
     }
 }
