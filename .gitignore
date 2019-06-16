@@ -1,1 +1,7 @@
 TrafficCodeTest/.idea
+TrafficCodeTest/.idea/**/workspace.xml
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
