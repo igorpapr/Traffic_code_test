@@ -9,17 +9,14 @@ public class Test {
 
     private List<Question> questions;
 
-    public Test() {
-        this.questions = new ArrayList<>();
+    public Test(List<Question> questions) {
+        this.questions = questions;
     }
 
     public List<Question> getQuestions() {
         return questions;
     }
 
-    public void add(Question question){
-        questions.add(question);
-    }
 
     @Override
     public String toString() {

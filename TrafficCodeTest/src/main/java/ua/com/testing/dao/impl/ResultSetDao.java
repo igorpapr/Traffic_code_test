@@ -21,6 +21,23 @@ public class ResultSetDao {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL + table);
 
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ResultSet findByType(byte type) {
+        Connection connection = connector.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL + table + " WHERE type=?");
+
+            preparedStatement.setByte(1, type);
+
             ResultSet resultSet = preparedStatement.executeQuery();
 
             return resultSet;
@@ -33,9 +50,23 @@ public class ResultSetDao {
     public ResultSet findWhereBaseId(long id) {
         Connection connection = connector.getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement( FIND_ALL + table+" WHERE baseid=? ");
+            PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL + table + " WHERE baseid=? ");
 
-            preparedStatement.setLong(1,id);
+            preparedStatement.setLong(1, id);
+
+            return preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ResultSet findById(long id) {
+        Connection connection = connector.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL + table + " WHERE id=? ");
+
+            preparedStatement.setLong(1, id);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 

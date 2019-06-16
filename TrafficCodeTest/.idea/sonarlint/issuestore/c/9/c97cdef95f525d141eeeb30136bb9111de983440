@@ -1,0 +1,7 @@
+
+xsquid:S1488("aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(ò¡¥¹
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+fsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‘‹Ë
+xsquid:S1488"aImmediately return this expression instead of assigning it to the temporary variable "resultSet".(ò¡¥¹
+?squid:S1148,"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+ksquid:S2095$"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(™ñÿŒùÿÿÿÿ

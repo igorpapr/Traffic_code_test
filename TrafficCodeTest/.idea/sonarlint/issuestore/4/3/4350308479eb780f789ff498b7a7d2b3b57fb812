@@ -1,0 +1,6 @@
+
+fsquid:S2095,"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‘‹Ë
+fsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‘‹Ë
+?squid:S1148$"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?squid:S11482"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+4squid:S2119?"Save and re-use this "Random".(¼İÅf

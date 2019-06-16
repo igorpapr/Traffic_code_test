@@ -7,30 +7,38 @@ import ua.com.testing.entity.question.Question;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class TestDaoImpl extends GenericDaoImpl<Question> implements GenericDao<Question> {
+public class TestDaoImpl {
 
-    public TestDaoImpl() {
-        super("questionbase", new Connector());
-    }
 
     public Test getAllQuestions() throws SQLException {
-        Test test = new Test();
-        List<Question> single= new SingleDaoImpl().mapResultSetToEntity();
+        List<Question> questions= new ArrayList<>();
 
-        for (int i = 0; i < single.size(); i++) {
-            test.add(single.get(i));
-        }
 
-        return test;
+        List<Question> help = new SingleDaoImpl().mapResultSetToList();
+        getFiveRandom(questions, help);
+
+        help = new MultipleDaoImpl().mapResultSetToList();
+        getFiveRandom(questions, help);
+
+        help = new ComplDaoImpl().mapResultSetToList();
+        getFiveRandom(questions, help);
+
+
+        return new Test(questions);
     }
 
+    private void getFiveRandom(List<Question> questions, List<Question> help) {
+        for (int i = 0; i < help.size()-5; i++) {
+            help.remove(ThreadLocalRandom.current().nextInt(0, help.size()+ 1));
+        }
+        questions.addAll(help);
+    }
 
-
-    @Override
-    public Question mapResultSetToEntity(ResultSet resultSet) throws SQLException {
-
-        return null;
+    public static void main(String[] args) throws SQLException {
+        System.out.println(new TestDaoImpl().getAllQuestions());
     }
 }
