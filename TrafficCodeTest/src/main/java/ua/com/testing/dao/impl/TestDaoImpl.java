@@ -1,11 +1,8 @@
 package ua.com.testing.dao.impl;
 
-import ua.com.testing.dao.Connector;
-import ua.com.testing.dao.GenericDao;
 import ua.com.testing.entity.Test;
 import ua.com.testing.entity.question.Question;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +12,7 @@ public class TestDaoImpl {
 
 
     public Test getAllQuestions() throws SQLException {
-        List<Question> questions= new ArrayList<>();
+        List<Question> questions = new ArrayList<>();
 
 
         List<Question> help = new SingleDaoImpl().mapResultSetToList();
@@ -32,8 +29,8 @@ public class TestDaoImpl {
     }
 
     private void getFiveRandom(List<Question> questions, List<Question> help) {
-        for (int i = 0; i < help.size()-5; i++) {
-            help.remove(ThreadLocalRandom.current().nextInt(0, help.size()+ 1));
+        for (int i = 0; i < help.size() - 5; i++) {
+            help.remove(ThreadLocalRandom.current().nextInt(0, help.size() + 1));
         }
         questions.addAll(help);
     }
