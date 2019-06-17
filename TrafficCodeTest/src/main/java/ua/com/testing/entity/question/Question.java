@@ -1,5 +1,7 @@
 package ua.com.testing.entity.question;
 
+import ua.com.testing.entity.Type;
+
 import java.util.Arrays;
 
 public abstract class Question {

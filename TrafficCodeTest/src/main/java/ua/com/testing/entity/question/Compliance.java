@@ -1,5 +1,7 @@
 package ua.com.testing.entity.question;
 
+import ua.com.testing.entity.Type;
+
 import java.util.Arrays;
 
 public class Compliance extends Question {
@@ -7,7 +9,7 @@ public class Compliance extends Question {
     private String[] answers;
 
     public Compliance(long id, String description, String[] questions, String[] answers) {
-        super(id, description, questions,Type.COMPL);
+        super(id, description, questions, Type.COMPL);
         this.answers = answers;
     }
 

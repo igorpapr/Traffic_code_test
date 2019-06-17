@@ -1,11 +1,13 @@
 package ua.com.testing.entity.question;
 
+import ua.com.testing.entity.Type;
+
 public class SingleChoice extends Question {
 
     private byte rightAnswer;
 
     public SingleChoice(long id, String description, String[] questions, byte rightAnswer) {
-        super(id, description, questions,Type.SINGLE);
+        super(id, description, questions, Type.SINGLE);
         this.rightAnswer = rightAnswer;
     }
 
