@@ -41,6 +41,8 @@ public class TestController extends HttpServlet {
             return;
         }
 
+        req.getSession().setAttribute("question",question);
+
         req.getSession().setAttribute("tests", test.getQuestions());
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/test.jsp");
