@@ -1,5 +1,7 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: dan
@@ -17,6 +19,10 @@
 <body>
 
 <p>Test</p>
+<p><span id="seconds">00</span>:<span id="tens">00</span></p>
+<button id="button-start">Start</button>
+<button id="button-stop">Stop</button>
+<button id="button-reset">Reset</button>
 
 <div class="container">
     <p>${tests[question-1].description}</p>
@@ -48,14 +54,13 @@
 <div class="pagination">
     <c:forEach begin="1" end="${noOfTests}" var="i">
         <c:if test="${question == i}">
-            <li style="display: inline-block">
-                <a class="active" style="pointer-events: none; cursor: default;">${i}</a>
-            </li>
+            <button type="button" class="btn btn-primary" disabled>${i}</button>
         </c:if>
         <c:if test="${question != i}">
-            <li style="display: inline-block">
-                <a href="test?question=${i}">${i}</a>
-            </li>
+            <form action="" method="post">
+                <input type="hidden" name="action" value="${i}">
+                <input type="submit" value="${i}" class="btn btn-primary">
+            </form>
         </c:if>
     </c:forEach>
 </div>
@@ -78,5 +83,6 @@
     <input type="hidden" name="action" value="finish">
     <input type="submit" value="finish" class="btn btn-primary">
 </form>
+<script src="js/stopwatch.js"></script>
 </body>
 </html>
