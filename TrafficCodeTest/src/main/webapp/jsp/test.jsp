@@ -14,8 +14,35 @@
 </head>
 <body>
 <p>Test</p>
-
-<p>${tests}</p>
+<c:forEach var="test" items="${tests}">
+    <div>
+        <p>${test.description}</p>
+        <c:choose>
+            <c:when test="${test.type == \"SINGLE\"}">
+                <c:forEach var="answer" items="${test.questions}">
+                    <input type="radio" name="answer" value="${answer}"/> ${answer}<br>
+                </c:forEach>
+            </c:when>
+            <c:when test="${test.type == \"MULTI\"}">
+                <c:forEach var="answer" items="${test.questions}">
+                    <input type="checkbox" name="answer" value="${answer}"/> ${answer}<br>
+                </c:forEach>
+            </c:when>
+            <c:when test="${test.type == \"COMPL\"}">
+                <c:forEach var="question" items="${test.questions}">
+                    ${question}
+                    <select name="${question}">
+                        <c:forEach var="answer" items="${test.answers}">
+                            <option> ${answer} </option>
+                        </c:forEach>
+                    </select>
+                    <br>
+                </c:forEach>
+            </c:when>
+        </c:choose>
+    </div>
+</c:forEach>
+<%--<p>${tests[0].}</p>--%>
 
 <form action="" method="post">
     <input type="hidden" name="action" value="back">
