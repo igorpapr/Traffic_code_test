@@ -11,55 +11,56 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
 <p>Test</p>
-<c:forEach var="test" items="${tests}">
-    <div>
-        <p>${test.description}</p>
-        <c:choose>
-            <c:when test="${test.type == \"SINGLE\"}">
-                <c:forEach var="answer" items="${test.questions}">
-                    <input type="radio" name="answer" value="${answer}"/> ${answer}<br>
-                </c:forEach>
-            </c:when>
-            <c:when test="${test.type == \"MULTI\"}">
-                <c:forEach var="answer" items="${test.questions}">
-                    <input type="checkbox" name="answer" value="${answer}"/> ${answer}<br>
-                </c:forEach>
-            </c:when>
-            <c:when test="${test.type == \"COMPL\"}">
-                <c:forEach var="question" items="${test.questions}">
-                    ${question}
-                    <select name="${question}">
-                        <c:forEach var="answer" items="${test.answers}">
-                            <option> ${answer} </option>
-                        </c:forEach>
-                    </select>
-                    <br>
-                </c:forEach>
-            </c:when>
-        </c:choose>
-    </div>
-</c:forEach>
-<%--<p>${tests[0].}</p>--%>
+
+<div class="container">
+    <p>${tests[question-1].description}</p>
+    <c:choose>
+        <c:when test="${tests[question-1].type == \"SINGLE\"}">
+            <c:forEach var="answer" items="${tests[question-1].questions}">
+                <input type="radio" name="answer" value="${answer}"/> ${answer}<br>
+            </c:forEach>
+        </c:when>
+        <c:when test="${tests[question-1].type == \"MULTI\"}">
+            <c:forEach var="answer" items="${tests[question-1].questions}">
+                <input type="checkbox" name="answer" value="${answer}"/> ${answer}<br>
+            </c:forEach>
+        </c:when>
+        <c:when test="${tests[question-1].type == \"COMPL\"}">
+            <c:forEach var="questionVar" items="${tests[question-1].questions}">
+                ${questionVar}
+                <select name="${questionVar}">
+                    <c:forEach var="answer" items="${tests[question-1].answers}">
+                        <option> ${answer} </option>
+                    </c:forEach>
+                </select>
+                <br>
+            </c:forEach>
+        </c:when>
+    </c:choose>
+</div>
+
 
 <form action="" method="post">
     <input type="hidden" name="action" value="back">
-    <input type="submit" value="back">
+    <input type="submit" value="back" class="btn btn-secondary">
 </form>
 
 
 <form action="" method="post">
     <input type="hidden" name="action" value="next">
-    <input type="submit" value="next">
+    <input type="submit" value="next" class="btn btn-success">
 </form>
 
 
 <form action="" method="post">
     <input type="hidden" name="action" value="finish">
-    <input type="submit" value="finish">
+    <input type="submit" value="finish" class="btn btn-primary">
 </form>
-
 </body>
 </html>
