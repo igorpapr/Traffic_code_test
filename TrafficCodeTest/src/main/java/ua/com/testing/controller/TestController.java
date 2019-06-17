@@ -73,15 +73,15 @@ public class TestController extends HttpServlet {
         if (test.getQuestions().get(question - 1).getType() == Type.SINGLE) {
             String answer = req.getParameter("answer");
 
-            test.setAnswer(question, findSingleAnswer(answer, test.getQuestions().get(question).getQuestions()));
+            test.setAnswer(question-1, findSingleAnswer(answer, test.getQuestions().get(question).getQuestions()));
         } else if (test.getQuestions().get(question - 1).getType() == Type.MULTI) {
             String answers[] = req.getParameterValues("answer");
 
-            test.setAnswer(question, findMultiAnswer(answers, test.getQuestions().get(question).getQuestions()));
+            test.setAnswer(question-1, findMultiAnswer(answers, test.getQuestions().get(question).getQuestions()));
         } else {
             String answers[] = req.getParameterValues("answer");
 
-            test.setAnswer(question,answers);
+            test.setAnswer(question-1,answers);
         }
 
         req.getSession().setAttribute("answers", test.getAnswers());
