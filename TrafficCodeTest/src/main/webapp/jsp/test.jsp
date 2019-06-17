@@ -45,17 +45,33 @@
     </c:choose>
 </div>
 
+<div class="pagination">
+    <c:forEach begin="1" end="${noOfTests}" var="i">
+        <c:if test="${question == i}">
+            <li style="display: inline-block">
+                <a class="active" style="pointer-events: none; cursor: default;">${i}</a>
+            </li>
+        </c:if>
+        <c:if test="${question != i}">
+            <li style="display: inline-block">
+                <a href="test?question=${i}">${i}</a>
+            </li>
+        </c:if>
+    </c:forEach>
+</div>
+<c:if test="${question != 1}">
+    <form action="" method="post">
+        <input type="hidden" name="action" value="back">
+        <input type="submit" value="back" class="btn btn-secondary">
+    </form>
+</c:if>
 
-<form action="" method="post">
-    <input type="hidden" name="action" value="back">
-    <input type="submit" value="back" class="btn btn-secondary">
-</form>
-
-
-<form action="" method="post">
-    <input type="hidden" name="action" value="next">
-    <input type="submit" value="next" class="btn btn-success">
-</form>
+<c:if test="${question != noOfTests}">
+    <form action="" method="post">
+        <input type="hidden" name="action" value="next">
+        <input type="submit" value="next" class="btn btn-success">
+    </form>
+</c:if>
 
 
 <form action="" method="post">
