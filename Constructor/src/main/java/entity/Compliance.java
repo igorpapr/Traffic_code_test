@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Compliance extends Question {
 
-    private String[] rightAnswers;
+    private String[] rightAnswers; //right side of answers
 
     public Compliance(String description, String[] answers, String[] rightAnswers) {
         super(description, answers);

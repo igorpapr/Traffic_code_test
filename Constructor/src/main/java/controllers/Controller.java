@@ -1,4 +1,4 @@
-package main.java.controllers;
+package controllers;
 
 import entity.Compliance;
 import entity.MultipleChoice;
@@ -6,6 +6,7 @@ import entity.SingleChoice;
 import exceptions.EmptyQuestionDescriptionException;
 import exceptions.EmptySelectedAnswerException;
 import exceptions.NoSelectedAnswerException;
+import exceptions.OneSideComplianceException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -175,28 +176,35 @@ public class Controller {
     }
 
     private Compliance createCompliance() throws EmptySelectedAnswerException,
-            NoSelectedAnswerException, EmptyQuestionDescriptionException {
+            NoSelectedAnswerException, EmptyQuestionDescriptionException, OneSideComplianceException {
         String descr;
-        String[] answers;
+        String[] leftAnswers;
         String[] rightAnswers;
 
         descr = description.getText().trim();
         if (descr.equals(""))
             throw new EmptyQuestionDescriptionException();
 
-        answers = new String[4];
-        answers[0] = compliance_answer_1_1.getText().trim();
-        answers[1] = multiple_answer_2.getText().trim();
-        answers[2] = multiple_answer_3.getText().trim();
-        answers[3] = multiple_answer_4.getText().trim();
+        leftAnswers = new String[4];
+        leftAnswers[0] = compliance_answer_1_1.getText().trim();
+        leftAnswers[1] = compliance_answer_2_1.getText().trim();
+        leftAnswers[2] = compliance_answer_3_1.getText().trim();
+        leftAnswers[3] = compliance_answer_4_1.getText().trim();
 
-        rightAnswers = getMultipleRightAnswers();
-        for (byte rightAnswer : rightAnswers) {
-            if (answers[((int) rightAnswer) - 1].equals("")) {
-                throw new EmptySelectedAnswerException();
+        rightAnswers = new String[4];
+        rightAnswers[0] = compliance_answer_1_2.getText().trim();
+        rightAnswers[1] = compliance_answer_2_2.getText().trim();
+        rightAnswers[2] = compliance_answer_3_2.getText().trim();
+        rightAnswers[3] = compliance_answer_4_2.getText().trim();
+
+        for(int i = 0; i < 4; i++){
+            if ((leftAnswers[i].equals("") && !rightAnswers[i].equals("")) ||( !leftAnswers[i]
+                    .equals("") && rightAnswers[i].equals(""))){
+                throw new OneSideComplianceException();
             }
         }
-        return new MultipleChoice(descr.trim(), answers, rightAnswers);
+
+        return new Compliance(descr.trim(), leftAnswers, rightAnswers);
     }
 
     public void clearSingleChoiceTab() {
@@ -297,8 +305,10 @@ public class Controller {
             AlertCreator.showNoSelectedAnswerAlert();
         } catch (EmptyQuestionDescriptionException e2) {
             AlertCreator.showEmptyQuestionDescriptionAlert();
-        } catch (Exception e3) {
-            e3.printStackTrace();
+        } catch (OneSideComplianceException e3) {
+            AlertCreator.showOneSideComplianceAlert();
+        }catch (Exception e4) {
+            e4.printStackTrace();
         }
     }
 
