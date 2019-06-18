@@ -1,6 +1,8 @@
 TrafficCodeTest/.idea/workspace.xml
 TrafficCodeTest/.idea/**/workspace.xml
 TrafficCodeTest/src/main/java/ua/com/testing/dao/Connector.java
+Constructor/.idea
+Constructor/out
 ### macOS ###
 # General
 .DS_Store

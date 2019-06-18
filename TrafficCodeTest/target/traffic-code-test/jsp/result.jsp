@@ -1,3 +1,5 @@
+<%@ page isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--
   Created by IntelliJ IDEA.
   User: nikita
@@ -11,6 +13,8 @@
     <title>Title</title>
 </head>
 <body>
-q123
+<c:forEach var="item" items="answers[2].answers">
+    <c:out value="${item}"></c:out>
+</c:forEach>
 </body>
 </html>

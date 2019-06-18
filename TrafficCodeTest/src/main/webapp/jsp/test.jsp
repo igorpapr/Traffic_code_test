@@ -1,5 +1,6 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%--
   Created by IntelliJ IDEA.
   User: dan
@@ -17,27 +18,57 @@
 <body>
 
 <p>Test</p>
-
+${tests}
 <div class="container">
     <p>${tests[question-1].description}</p>
     <form action="" method="post">
         <c:choose>
+
             <c:when test="${tests[question-1].type == \"SINGLE\"}">
-                <c:forEach var="answer" items="${tests[question-1].questions}">
-                    <input type="radio" name="answer" value="${answer}"/> ${answer}<br>
+                <c:forEach begin="1" end="4" var="i">
+                    <c:choose>
+                        <c:when test="${answers[question-1].answer == i}">
+                            <input type="radio" name="answer" value="${tests[question-1].questions[i-1]}"
+                                   checked/> ${tests[question-1].questions[i-1]}<br>
+                        </c:when>
+                        <c:otherwise>
+                            <input type="radio" name="answer"
+                                   value="${tests[question-1].questions[i-1]}"/> ${tests[question-1].questions[i-1]}<br>
+                        </c:otherwise>
+                    </c:choose>
                 </c:forEach>
             </c:when>
+
             <c:when test="${tests[question-1].type == \"MULTI\"}">
-                <c:forEach var="answer" items="${tests[question-1].questions}">
-                    <input type="checkbox" name="answer" value="${answer}"/> ${answer}<br>
+                <c:forEach begin="1" end="4" var="i">
+                    <input type="checkbox" name="answer" value="${tests[question-1].questions[i-1]}"
+                            <c:forEach var="item" items="${answers[question-1].answers}">
+                                <c:if test="${item eq i}">
+                                    checked
+                                </c:if>
+                            </c:forEach>
+                    />
+                    ${tests[question-1].questions[i-1]}
+                    <br>
                 </c:forEach>
             </c:when>
+
             <c:when test="${tests[question-1].type == \"COMPL\"}">
                 <c:forEach var="questionVar" items="${tests[question-1].questions}">
                     ${questionVar}
                     <select name="answer">
-                        <c:forEach var="answer" items="${tests[question-1].answers}">
-                            <option value=${answer}> ${answer} </option>
+                        <option></option>
+                        <c:forEach var="i" begin="0" end="3">
+                            <option value="${tests[question-1].answers[i]}"
+<%--                                    <c:set var="flagq" value="${true}"/>--%>
+<%--                                    <c:forEach var="j" begin="0" end="3">--%>
+<%--                                        <c:if test="${tests[question-1].answers[j] == answers[question-1].answers[i] && flagq &&--%>
+<%--                                         fn:length(answers[question-1].answers) > 0}">--%>
+<%--                                            selected--%>
+<%--                                            <c:set var="flagq" value="${false}"/>--%>
+<%--                                        </c:if>--%>
+<%--                                    </c:forEach>--%>
+                            > ${tests[question-1].answers[i]} </option>
                         </c:forEach>
                     </select>
                     <br>
@@ -53,6 +84,7 @@
             <input type="submit" name="action" value="next" class="btn btn-success">
         </c:if>
 
+        <input type="submit" name="action" value="finish" class="btn btn-primary">
     </form>
 </div>
 
@@ -72,9 +104,5 @@
 </div>
 
 
-<form action="" method="post">
-    <input type="hidden" name="action" value="finish">
-    <input type="submit" value="finish" class="btn btn-primary">
-</form>
 </body>
 </html>
