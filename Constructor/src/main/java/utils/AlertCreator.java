@@ -28,6 +28,15 @@ public class AlertCreator {
         alert.showAndWait();
     }
 
+    public static void showOneSideComplianceAlert(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Спробуйте знову");
+        alert.setHeaderText("Заповніть відповідність повністю");
+        alert.setContentText("Ви не заповнили одну з частин відповідності.\nСпробуйте знову.");
+        alert.showAndWait();
+    }
+
+
     public static void showOkDialog(String title, String header, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
