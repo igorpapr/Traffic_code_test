@@ -59,8 +59,7 @@ public class TestController extends HttpServlet {
                 break;
             case "finish":
                 getAnswers(req, resp);
-
-                //TODO: results
+                resp.sendRedirect("/result");
                 break;
         }
     }
