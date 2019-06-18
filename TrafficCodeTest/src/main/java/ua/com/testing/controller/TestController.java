@@ -48,6 +48,7 @@ public class TestController extends HttpServlet {
         String action = req.getParameter("action");
         int question = Integer.valueOf(req.getParameter("question"));
 
+
         switch (action) {
             case "back":
                 getAnswers(req, resp);
@@ -61,6 +62,11 @@ public class TestController extends HttpServlet {
                 getAnswers(req, resp);
                 resp.sendRedirect("/result");
                 break;
+            default:
+                int page = Integer.parseInt(action);
+                getAnswers(req, resp);
+                resp.sendRedirect("/test?question=" + page);
+                break;
         }
     }
 
@@ -72,16 +78,17 @@ public class TestController extends HttpServlet {
         if (test.getQuestions().get(question - 1).getType() == Type.SINGLE) {
             String answer = req.getParameter("answer");
 
-            test.setAnswer(question-1, findSingleAnswer(answer, test.getQuestions().get(question).getQuestions()));
+            test.setAnswer(question - 1, findSingleAnswer(answer, test.getQuestions().get(question).getQuestions()));
         } else if (test.getQuestions().get(question - 1).getType() == Type.MULTI) {
             String answers[] = req.getParameterValues("answer");
 
-            test.setAnswer(question-1, findMultiAnswer(answers, test.getQuestions().get(question).getQuestions()));
+            test.setAnswer(question - 1, findMultiAnswer(answers, test.getQuestions().get(question).getQuestions()));
         } else {
             String answers[] = req.getParameterValues("answer");
 
-            test.setAnswer(question-1,answers);
+            test.setAnswer(question - 1, answers);
         }
+
 
         req.getSession().setAttribute("answers", test.getAnswers());
         req.getSession().setAttribute("rightanswers", test.getAllRightCount());
@@ -99,15 +106,15 @@ public class TestController extends HttpServlet {
     private byte[] findMultiAnswer(String[] my, String[] answers) {
         try {
             byte[] right = new byte[my.length];
-            for (byte j = 0; j <my.length; j++) {
+            for (byte j = 0; j < my.length; j++) {
                 for (byte i = 1; i <= answers.length; i = (byte) (i + 1)) {
                     if (answers[i - 1].equals(my[j])) {
-                        right[j]=i;
+                        right[j] = i;
                     }
                 }
             }
             return right;
-        }catch (Exception ignored){
+        } catch (Exception ignored) {
             return null;
         }
     }
