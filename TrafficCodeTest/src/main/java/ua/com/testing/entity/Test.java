@@ -36,9 +36,13 @@ public class Test {
     }
 
     private Byte[] toObjects(byte[] bytesPrim) {
-        Byte[] bytes = new Byte[bytesPrim.length];
-        Arrays.setAll(bytes, n -> bytesPrim[n]);
-        return bytes;
+        if(bytesPrim!=null) {
+            Byte[] bytes = new Byte[bytesPrim.length];
+            Arrays.setAll(bytes, n -> bytesPrim[n]);
+            return bytes;
+        }else {
+            return null;
+        }
     }
 
     public void setAnswer(int i, byte[] gettedAnswers) {

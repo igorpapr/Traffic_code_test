@@ -98,7 +98,7 @@
                 </c:if>
                 <c:if test="${question != i}">
                     <li class="page-item">
-                            <input type="submit" value="${i}" class="page-link">
+                            <input name="action" type="submit" value="${i}" class="page-link">
                     </li>
                 </c:if>
 
