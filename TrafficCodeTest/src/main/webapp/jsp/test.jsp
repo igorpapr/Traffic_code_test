@@ -88,27 +88,25 @@
             </li>
         </ul>
 
+        <ul class="pagination justify-content-center pagination-lg">
+            <c:forEach begin="1" end="${noOfTests}" var="i">
+
+                <c:if test="${question == i}">
+                    <li class="page-item disabled">
+                        <a class="page-link" tabindex="-1" aria-disabled="true">${i}</a>
+                    </li>
+                </c:if>
+                <c:if test="${question != i}">
+                    <li class="page-item">
+                            <input type="submit" value="${i}" class="page-link">
+                    </li>
+                </c:if>
+
+            </c:forEach>
+        </ul>
     </form>
 </div>
-<ul class="pagination justify-content-center pagination-lg">
-    <c:forEach begin="1" end="${noOfTests}" var="i">
 
-        <c:if test="${question == i}">
-            <li class="page-item disabled">
-                <a class="page-link" tabindex="-1" aria-disabled="true">${i}</a>
-            </li>
-        </c:if>
-        <c:if test="${question != i}">
-            <li class="page-item">
-                <form action="" method="post">
-                    <input type="hidden" name="action" value="${i}">
-                    <input type="submit" value="${i}" class="page-link">
-                </form>
-            </li>
-        </c:if>
-
-    </c:forEach>
-</ul>
 
 
 </body>
