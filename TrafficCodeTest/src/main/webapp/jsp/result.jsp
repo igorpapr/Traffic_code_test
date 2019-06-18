@@ -8,13 +8,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
+<jsp:include page="header.jsp"/>
 <body>
-<c:forEach var="item" items="answers[2].answers">
-    <c:out value="${item}"></c:out>
-</c:forEach>
+<h1 class="text-center" style="margin: 20% 0% 0%">Ваш результат: ${rightanswers}/${noOfTests}</h1>
+<div class="justify-content-center">
+    <a href="/" class="btn btn-primary">Головна сторінка</a>
+</div>
 </body>
-</html>
+<jsp:include page="footer.jsp"/>
