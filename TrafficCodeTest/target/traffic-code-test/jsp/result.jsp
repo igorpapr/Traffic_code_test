@@ -10,9 +10,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="header.jsp"/>
 <body>
-<h1 class="text-center" style="margin: 20% 0% 0%">Ваш результат: ${rightanswers}/${noOfTests}</h1>
-<div class="justify-content-center">
-    <a href="/" class="btn btn-primary">Головна сторінка</a>
+<h1 class="text-center" style="margin: 15% 0% 5%">Ваш результат: ${rightanswers}/${noOfTests}</h1>
+<div class="d-flex justify-content-center ">
+    <a href="/" class=" btn btn-primary">Головна сторінка</a>
 </div>
 </body>
 <jsp:include page="footer.jsp"/>

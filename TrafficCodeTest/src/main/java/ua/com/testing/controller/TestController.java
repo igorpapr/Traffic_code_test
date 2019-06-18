@@ -50,15 +50,15 @@ public class TestController extends HttpServlet {
 
 
         switch (action) {
-            case "back":
+            case "Back":
                 getAnswers(req, resp);
                 resp.sendRedirect("/test?question=" + (question - 1));
                 break;
-            case "next":
+            case "Next":
                 getAnswers(req, resp);
                 resp.sendRedirect("/test?question=" + (1 + question));
                 break;
-            case "finish":
+            case "Finish":
                 getAnswers(req, resp);
                 resp.sendRedirect("/result");
                 break;

@@ -74,17 +74,17 @@
         disabled
         </c:if>
 ">
-                <input type="submit" name="action" value="back" class="page-link">
+                <input type="submit" name="action" value="Back" class="page-link">
             </li>
             <li class="page-item  <c:if test="${question == noOfTests}">
         disabled
         </c:if>">
-                <input type="submit" name="action" value="next" class="page-link
+                <input type="submit" name="action" value="Next" class="page-link
 
         ">
             </li>
             <li>
-                <input type="submit" name="action" value="finish" class="page-item page-link">
+                <input type="submit" name="action" value="Finish" class="page-item page-link">
             </li>
         </ul>
 
