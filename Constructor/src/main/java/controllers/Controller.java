@@ -1,4 +1,4 @@
-package controllers;
+package main.java.controllers;
 
 import entity.Compliance;
 import entity.MultipleChoice;

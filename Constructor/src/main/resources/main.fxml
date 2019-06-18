@@ -6,7 +6,8 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.*?>
 <VBox id="VBox" alignment="TOP_CENTER" prefHeight="467.0" prefWidth="607.0" spacing="0.0"
-      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controllers.Controller">
+      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2"
+        fx:controller="main.java.controllers.Controller">
     <children>
         <TextArea fx:id="description" maxHeight="-1.0" minHeight="100.0" prefHeight="100.0" prefWidth="607.0"
                   promptText="Введіть опис питання" wrapText="true" VBox.vgrow="ALWAYS">
