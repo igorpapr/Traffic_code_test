@@ -1,5 +1,6 @@
 package controllers;
 
+import entity.Compliance;
 import entity.MultipleChoice;
 import entity.SingleChoice;
 import exceptions.EmptyQuestionDescriptionException;
@@ -126,7 +127,8 @@ public class Controller {
     }
 
 
-    private SingleChoice createSingleChoice() throws EmptySelectedAnswerException, NoSelectedAnswerException, EmptyQuestionDescriptionException {
+    private SingleChoice createSingleChoice() throws EmptySelectedAnswerException,
+            NoSelectedAnswerException, EmptyQuestionDescriptionException {
         String descr;
         String[] answers;
         byte rightAnswer = 0;
@@ -149,7 +151,8 @@ public class Controller {
         return new SingleChoice(descr, answers, rightAnswer);
     }
 
-    private MultipleChoice createMultipleChoice() throws EmptySelectedAnswerException, NoSelectedAnswerException, EmptyQuestionDescriptionException {
+    private MultipleChoice createMultipleChoice() throws EmptySelectedAnswerException,
+            NoSelectedAnswerException, EmptyQuestionDescriptionException {
         String descr;
         String[] answers;
         byte[] rightAnswers;
@@ -171,6 +174,30 @@ public class Controller {
         return new MultipleChoice(descr.trim(), answers, rightAnswers);
     }
 
+    private Compliance createCompliance() throws EmptySelectedAnswerException,
+            NoSelectedAnswerException, EmptyQuestionDescriptionException {
+        String descr;
+        String[] answers;
+        String[] rightAnswers;
+
+        descr = description.getText().trim();
+        if (descr.equals(""))
+            throw new EmptyQuestionDescriptionException();
+
+        answers = new String[4];
+        answers[0] = compliance_answer_1_1.getText().trim();
+        answers[1] = multiple_answer_2.getText().trim();
+        answers[2] = multiple_answer_3.getText().trim();
+        answers[3] = multiple_answer_4.getText().trim();
+
+        rightAnswers = getMultipleRightAnswers();
+        for (byte rightAnswer : rightAnswers) {
+            if (answers[((int) rightAnswer) - 1].equals("")) {
+                throw new EmptySelectedAnswerException();
+            }
+        }
+        return new MultipleChoice(descr.trim(), answers, rightAnswers);
+    }
 
     public void clearSingleChoiceTab() {
         description.clear();
@@ -251,6 +278,30 @@ public class Controller {
             e3.printStackTrace();
         }
     }
+
+    // Handler for Button[fx:id="compliance_button"] onAction
+    @FXML
+    void onComplianceButtonClick(ActionEvent event) {
+        Compliance c = null;
+        try {
+            c = createCompliance();
+
+            System.out.println(c);////////////////TODO dao
+
+            clearComplianceTab();
+            AlertCreator.showOkDialog("OK", "Операція пройшла успішно", "");
+
+        } catch (EmptySelectedAnswerException e) {
+            AlertCreator.showEmptySelectedAnswerAlert();
+        } catch (NoSelectedAnswerException e1) {
+            AlertCreator.showNoSelectedAnswerAlert();
+        } catch (EmptyQuestionDescriptionException e2) {
+            AlertCreator.showEmptyQuestionDescriptionAlert();
+        } catch (Exception e3) {
+            e3.printStackTrace();
+        }
+    }
+
 
     @FXML
         // This method is called by the FXMLLoader when initialization is complete

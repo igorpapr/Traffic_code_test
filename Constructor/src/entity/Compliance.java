@@ -4,27 +4,25 @@ import java.util.Arrays;
 
 public class Compliance extends Question {
 
-    private String[] answers;
+    private String[] rightAnswers;
 
-    public Compliance(String description, String[] answers, String[] answers1) {
+    public Compliance(String description, String[] answers, String[] rightAnswers) {
         super(description, answers);
-        this.answers = answers1;
+        this.rightAnswers = rightAnswers;
     }
 
-    @Override
-    public String[] getAnswers() {
-        return answers;
+    public String[] getRightAnswers() {
+        return rightAnswers;
     }
 
-    @Override
-    public void setAnswers(String[] answers) {
-        this.answers = answers;
+    public void setRightAnswers(String[] rightAnswers) {
+        this.rightAnswers = rightAnswers;
     }
 
     @Override
     public String toString() {
         return "Compliance{" +
-                "answers=" + Arrays.toString(answers) +
+                "answers=" + Arrays.toString(rightAnswers) +
                 '}' + super.toString();
     }
 }
