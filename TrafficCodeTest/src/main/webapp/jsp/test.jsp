@@ -1,6 +1,8 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: dan
@@ -8,18 +10,10 @@
   Time: 20:52
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
 
-<p>Test</p>
-${tests}
-<div class="container">
+<jsp:include page="header.jsp"/>
+<body>
+<div class="col-xs-1" align="center" style="margin: 10% 10% 3%">
     <p>${tests[question-1].description}</p>
     <form action="" method="post">
         <c:choose>
@@ -60,14 +54,14 @@ ${tests}
                         <option></option>
                         <c:forEach var="i" begin="0" end="3">
                             <option value="${tests[question-1].answers[i]}"
-<%--                                    <c:set var="flagq" value="${true}"/>--%>
-<%--                                    <c:forEach var="j" begin="0" end="3">--%>
-<%--                                        <c:if test="${tests[question-1].answers[j] == answers[question-1].answers[i] && flagq &&--%>
-<%--                                         fn:length(answers[question-1].answers) > 0}">--%>
-<%--                                            selected--%>
-<%--                                            <c:set var="flagq" value="${false}"/>--%>
-<%--                                        </c:if>--%>
-<%--                                    </c:forEach>--%>
+                                <%--                                    <c:set var="flagq" value="${true}"/>--%>
+                                <%--                                    <c:forEach var="j" begin="0" end="3">--%>
+                                <%--                                        <c:if test="${tests[question-1].answers[j] == answers[question-1].answers[i] && flagq &&--%>
+                                <%--                                         fn:length(answers[question-1].answers) > 0}">--%>
+                                <%--                                            selected--%>
+                                <%--                                            <c:set var="flagq" value="${false}"/>--%>
+                                <%--                                        </c:if>--%>
+                                <%--                                    </c:forEach>--%>
                             > ${tests[question-1].answers[i]} </option>
                         </c:forEach>
                     </select>
@@ -75,34 +69,48 @@ ${tests}
                 </c:forEach>
             </c:when>
         </c:choose>
-
-        <c:if test="${question != 1}">
-            <input type="submit" name="action" value="back" class="btn btn-secondary">
+        <ul class="pagination justify-content-center pagination-lg" style="margin: 20% 0% 0%">
+            <li class="page-item <c:if test="${question == 1}">
+        disabled
         </c:if>
+">
+                <input type="submit" name="action" value="back" class="page-link">
+            </li>
+            <li class="page-item  <c:if test="${question == noOfTests}">
+        disabled
+        </c:if>">
+                <input type="submit" name="action" value="next" class="page-link
 
-        <c:if test="${question != noOfTests}">
-            <input type="submit" name="action" value="next" class="btn btn-success">
-        </c:if>
+        ">
+            </li>
+            <li>
+                <input type="submit" name="action" value="finish" class="page-item page-link">
+            </li>
+        </ul>
 
-        <input type="submit" name="action" value="finish" class="btn btn-primary">
     </form>
 </div>
-
-
-<div class="pagination">
+<ul class="pagination justify-content-center pagination-lg">
     <c:forEach begin="1" end="${noOfTests}" var="i">
+
         <c:if test="${question == i}">
-            <button type="button" class="btn btn-primary" disabled>${i}</button>
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true">${i}</a>
+            </li>
         </c:if>
         <c:if test="${question != i}">
-            <form action="" method="post">
-                <input type="hidden" name="action" value="${i}">
-                <input type="submit" value="${i}" class="btn btn-primary">
-            </form>
+            <li class="page-item">
+                <form action="" method="post">
+                    <input type="hidden" name="action" value="${i}">
+                    <input type="submit" value="${i}" class="page-link">
+                </form>
+            </li>
         </c:if>
+
     </c:forEach>
-</div>
+</ul>
 
 
 </body>
-</html>
+<jsp:include page="footer.jsp"/>
+

@@ -84,6 +84,7 @@ public class TestController extends HttpServlet {
         }
 
         req.getSession().setAttribute("answers", test.getAnswers());
+        req.getSession().setAttribute("rightanswers", test.getAllRightCount());
     }
 
     private byte findSingleAnswer(String answer, String[] answers) {
