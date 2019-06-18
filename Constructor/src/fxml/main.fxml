@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.*?>
+<VBox id="VBox" alignment="TOP_CENTER" prefHeight="467.0" prefWidth="607.0" spacing="0.0"
+      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controllers.Controller">
+    <children>
+        <TextArea fx:id="description" maxHeight="-1.0" minHeight="100.0" prefHeight="100.0" prefWidth="607.0"
+                  promptText="Введіть опис питання" wrapText="true" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets fx:id="x4"/>
+            </VBox.margin>
+        </TextArea>
+        <TabPane prefHeight="295.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE" VBox.margin="$x4"
+                 VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab text="Один варіант відповіді">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="600.0">
+                            <children>
+                                <TextField fx:id="single_answer_1" prefHeight="34.0" prefWidth="268.0"
+                                           promptText="Перший варіант відповіді" AnchorPane.leftAnchor="179.0"
+                                           AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="50.0"/>
+                                <RadioButton fx:id="single_radio_1" mnemonicParsing="false" prefHeight="24.0"
+                                             prefWidth="24.0" text="" AnchorPane.leftAnchor="155.0"
+                                             AnchorPane.rightAnchor="418.0" AnchorPane.topAnchor="55.0">
+                                    <font>
+                                        <Font size="14.0" fx:id="x1"/>
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="single_group"/>
+                                    </toggleGroup>
+                                </RadioButton>
+                                <TextField fx:id="single_answer_2" prefHeight="34.0" prefWidth="268.0"
+                                           promptText="Другий варіант відповіді" AnchorPane.leftAnchor="179.0"
+                                           AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="100.0"/>
+                                <RadioButton fx:id="single_radio_2" font="$x1" mnemonicParsing="false" prefHeight="24.0"
+                                             prefWidth="24.0" toggleGroup="$single_group" AnchorPane.leftAnchor="155.0"
+                                             AnchorPane.rightAnchor="418.0" AnchorPane.topAnchor="105.0"/>
+                                <TextField fx:id="single_answer_3" prefHeight="34.0" prefWidth="268.0"
+                                           promptText="Третій варіант відповіді" AnchorPane.leftAnchor="179.0"
+                                           AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="150.0"/>
+                                <RadioButton fx:id="single_radio_3" font="$x1" mnemonicParsing="false" prefHeight="24.0"
+                                             prefWidth="24.0" toggleGroup="$single_group" AnchorPane.leftAnchor="155.0"
+                                             AnchorPane.rightAnchor="418.0" AnchorPane.topAnchor="155.0"/>
+                                <TextField fx:id="single_answer_4" prefHeight="34.0" prefWidth="268.0"
+                                           promptText="Четвертий варіант відповіді" AnchorPane.leftAnchor="179.0"
+                                           AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="200.0"/>
+                                <RadioButton fx:id="single_radio_4" font="$x1" mnemonicParsing="false" prefHeight="24.0"
+                                             prefWidth="24.0" toggleGroup="$single_group" AnchorPane.leftAnchor="155.0"
+                                             AnchorPane.rightAnchor="418.0" AnchorPane.topAnchor="205.0"/>
+                                <Button fx:id="single_button" mnemonicParsing="false" onAction="#onSingleButtonClick"
+                                        prefHeight="34.0" prefWidth="119.0" text="Відправити"
+                                        AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="28.0"/>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Позначте правильну відповідь"
+                                      AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="355.95"
+                                      AnchorPane.topAnchor="22.89">
+                                    <fill>
+                                        <Color blue="0.625" green="0.625" red="0.625" fx:id="x2"/>
+                                    </fill>
+                                    <font>
+                                        <Font name="System Italic" size="14.0" fx:id="x3"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Кілька варіантів відповіді">
+                    <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Button fx:id="multiple_button" mnemonicParsing="false"
+                                        onAction="#onMultipleButtonClick" prefHeight="35.0" prefWidth="122.0"
+                                        text="Відправити" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="28.0"/>
+                                <CheckBox fx:id="multiple_checkbox_1" mnemonicParsing="false" prefHeight="28.0"
+                                          prefWidth="20.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="456.0"
+                                          AnchorPane.topAnchor="55.0"/>
+                                <CheckBox fx:id="multiple_checkbox_2" mnemonicParsing="false" prefHeight="28.0"
+                                          prefWidth="20.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="456.0"
+                                          AnchorPane.topAnchor="105.0"/>
+                                <CheckBox fx:id="multiple_checkbox_3" mnemonicParsing="false" prefHeight="28.0"
+                                          prefWidth="20.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="456.0"
+                                          AnchorPane.topAnchor="155.0"/>
+                                <CheckBox fx:id="multiple_checkbox_4" mnemonicParsing="false" prefHeight="28.0"
+                                          prefWidth="20.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="456.0"
+                                          AnchorPane.topAnchor="205.0"/>
+                                <TextField fx:id="multiple_answer_1" prefHeight="35.0" prefWidth="353.0000999999975"
+                                           promptText="Перший варіант відповіді" AnchorPane.leftAnchor="158.0"
+                                           AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="50.0"/>
+                                <TextField fx:id="multiple_answer_2" prefHeight="35.0" prefWidth="353.0"
+                                           promptText="Другий варіант відповіді" AnchorPane.leftAnchor="158.0"
+                                           AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="100.0"/>
+                                <TextField fx:id="multiple_answer_3" prefHeight="35.0" prefWidth="353.0"
+                                           promptText="Третій варіант відповіді" AnchorPane.leftAnchor="158.0"
+                                           AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="150.0"/>
+                                <TextField fx:id="multiple_answer_4" prefHeight="35.0" prefWidth="352.9998779296875"
+                                           promptText="Четвертий варіант відповіді" AnchorPane.leftAnchor="158.0"
+                                           AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="200.0"/>
+                                <Text fill="$x2" font="$x3" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Позначте одну або кілька правильних відповідей" AnchorPane.leftAnchor="48.0"
+                                      AnchorPane.rightAnchor="286.85" AnchorPane.topAnchor="22.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Відповідність">
+                    <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Text fill="$x2" font="$x3" fontSmoothingType="GRAY" smooth="true" strokeType="OUTSIDE"
+                                      strokeWidth="0.0" text="Введіть відповіді в правильному порядку" visible="true"
+                                      AnchorPane.leftAnchor="34.0"
+                                      AnchorPane.rightAnchor="296.31" AnchorPane.topAnchor="20.0"/>
+                                <TextField id="compliance_a_1_1" fx:id="compliance_answer_1_1" prefHeight="33.0"
+                                           prefWidth="191.0"
+                                           promptText="Перша відповідь (1)" AnchorPane.leftAnchor="58.0"
+                                           AnchorPane.topAnchor="50.0"/>
+                                <TextField id="compliance_a_2_1" fx:id="compliance_answer_2_1" prefHeight="33.0"
+                                           prefWidth="191.0"
+                                           promptText="Друга відповідь (1)" AnchorPane.leftAnchor="58.0"
+                                           AnchorPane.topAnchor="100.0"/>
+                                <TextField id="compliance_a_3_1" fx:id="compliance_answer_3_1" prefHeight="33.0"
+                                           prefWidth="191.0"
+                                           promptText="Третя відповідь (1)" AnchorPane.leftAnchor="58.0"
+                                           AnchorPane.topAnchor="150.0"/>
+                                <TextField id="compliance_a_4_1" fx:id="compliance_answer_4_1"
+                                           prefHeight="33.000099999997474"
+                                           prefWidth="191.0" promptText="Четверта відповідь (1)"
+                                           AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="200.0"/>
+                                <TextField id="compliance_a_1_2" fx:id="compliance_answer_1_2" prefHeight="35.0"
+                                           prefWidth="191.0" promptText="Перша відповідь (2)"
+                                           AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="50.0"/>
+                                <TextField id="compliance_a_2_2" fx:id="compliance_answer_2_2"
+                                           prefHeight="34.000099999997474" prefWidth="192.0"
+                                           promptText="Друга відповідь (2)" AnchorPane.rightAnchor="53.0"
+                                           AnchorPane.topAnchor="100.0"/>
+                                <TextField id="compliance_a_3_2" fx:id="compliance_answer_3_2"
+                                           prefHeight="33.000099999997474" prefWidth="192.0"
+                                           promptText="Третя відповідь (2)" AnchorPane.rightAnchor="53.0"
+                                           AnchorPane.topAnchor="150.0"/>
+                                <TextField id="compliance_a_4_2" fx:id="compliance_answer_4_2"
+                                           prefHeight="33.000099999997474" prefWidth="192.0"
+                                           promptText="Четверта відповідь (2)" AnchorPane.rightAnchor="53.0"
+                                           AnchorPane.topAnchor="200.0"/>
+                                <Button fx:id="compliance_button" layoutX="34.0" mnemonicParsing="false"
+                                        prefHeight="33.0" prefWidth="113.0" text="Відправити"
+                                        AnchorPane.topAnchor="250.0"/>
+                                <Separator layoutY="68.0" prefWidth="104.0" AnchorPane.leftAnchor="249.0"
+                                           AnchorPane.rightAnchor="244.0"/>
+                                <Separator layoutY="118.0" minHeight="1.0" prefHeight="1.0" prefWidth="106.0"
+                                           AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="244.0"/>
+                                <Separator layoutY="167.0" prefWidth="106.00009999999747" AnchorPane.leftAnchor="247.0"
+                                           AnchorPane.rightAnchor="243.0"/>
+                                <Separator layoutY="217.0" prefWidth="107.0" AnchorPane.leftAnchor="247.0"
+                                           AnchorPane.rightAnchor="243.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>
