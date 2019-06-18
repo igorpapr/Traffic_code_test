@@ -23,7 +23,7 @@ public class DataBaseDao {
             preparedStatement.setByte(2, type);
             preparedStatement.executeUpdate();
 
-            long id = getLastId(description, "questionbase");
+            long id = getLastId(description);
 
 
             for (String question : questions) {
@@ -53,11 +53,11 @@ public class DataBaseDao {
             preparedStatement.setByte(2, type);
             preparedStatement.executeUpdate();
 
-            long id = getLastId(description, "questionbase");
+            long id = getLastId(description);
             String answers = "";
 
             for (int i = 0; i < rightAnswers.length; i++) {
-                answers += rightAnswers[i] + i < rightAnswers.length - 1 ? "_" : "";
+                answers += String.valueOf(rightAnswers[i]) +( i < rightAnswers.length - 1 ? "_" : "");
             }
 
             for (String question : questions) {
@@ -87,7 +87,7 @@ public class DataBaseDao {
             preparedStatement.setByte(2, type);
             preparedStatement.executeUpdate();
 
-            long id = getLastId(description, "questionbase");
+            long id = getLastId(description);
 
             long[] ids = new long[answers.length];
 
@@ -98,7 +98,7 @@ public class DataBaseDao {
 
                 preparedStatement.executeUpdate();
 
-                ids[i] = getLastId(answers[i], "answers");
+                ids[i] = getLastId2(answers[i]);
             }
 
             for (int i = 0; i < answers.length; i++) {
@@ -119,15 +119,42 @@ public class DataBaseDao {
         }
     }
 
-    private long getLastId(String description, String table) {
+    private long getLastId(String description) {
         try (Connection connection = connector.getConnection()) {
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("SELECT * FROM " + table + " WHERE description=?");
+                    connection.prepareStatement("SELECT * FROM questionbase WHERE description=?");
 
             preparedStatement.setString(1, description);
+
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            long id = Long.parseLong(null);
+            long id=-1L;
+
+            while (resultSet.next()) {
+                id = resultSet.getLong("id");
+            }
+
+            return id;
+
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Long.parseLong(null);
+    }
+
+    private long getLastId2(String description) {
+        try (Connection connection = connector.getConnection()) {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT * FROM answers WHERE text=?");
+
+            preparedStatement.setString(1, description);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            long id = -1;
 
             while (resultSet.next()) {
                 id = resultSet.getLong("id");

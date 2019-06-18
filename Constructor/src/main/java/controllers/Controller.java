@@ -1,5 +1,7 @@
 package controllers;
 
+import dao.Connector;
+import dao.DataBaseDao;
 import entity.Compliance;
 import entity.MultipleChoice;
 import entity.SingleChoice;
@@ -17,6 +19,8 @@ import java.util.ResourceBundle;
 
 
 public class Controller {
+    final static DataBaseDao dataBaseDao = new DataBaseDao(new Connector());
+
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
     @FXML // URL location of the FXML file that was given to the FXMLLoader
@@ -149,7 +153,22 @@ public class Controller {
                 throw new EmptySelectedAnswerException();
             }
         }
-        return new SingleChoice(descr, answers, rightAnswer);
+
+        int size = 0;
+        for (int i = 0; i < 4; i++){
+            if (!answers[i].equals("")){
+                size++;
+            }
+        }
+        String[] res_answers = new String[size];
+
+        for (int i = 0, j = 0; i < 4; i++){
+            if(!answers[i].equals("")){
+                res_answers[j] = answers[i];
+                j++;
+            }
+        }
+        return new SingleChoice(descr, res_answers, rightAnswer);
     }
 
     private MultipleChoice createMultipleChoice() throws EmptySelectedAnswerException,
@@ -172,11 +191,26 @@ public class Controller {
                 throw new EmptySelectedAnswerException();
             }
         }
-        return new MultipleChoice(descr.trim(), answers, rightAnswers);
+
+        int size = 0;
+        for (int i = 0; i < 4; i++){
+            if (!answers[i].equals("")){
+                size++;
+            }
+        }
+        String[] res_answers = new String[size];
+
+        for (int i = 0, j = 0; i < 4; i++){
+            if(!answers[i].equals("")){
+                res_answers[j] = answers[i];
+                j++;
+            }
+        }
+
+        return new MultipleChoice(descr.trim(), res_answers, rightAnswers);
     }
 
-    private Compliance createCompliance() throws EmptySelectedAnswerException,
-            NoSelectedAnswerException, EmptyQuestionDescriptionException, OneSideComplianceException {
+    private Compliance createCompliance() throws EmptyQuestionDescriptionException, OneSideComplianceException {
         String descr;
         String[] leftAnswers;
         String[] rightAnswers;
@@ -203,8 +237,39 @@ public class Controller {
                 throw new OneSideComplianceException();
             }
         }
+        boolean empty = true;
+        for(int i = 0; i < 4; i++){
+            if(!leftAnswers[i].equals("") && !rightAnswers[i].equals("")){
+                empty = false;
+            }
+        }
+        if(empty)
+            throw new OneSideComplianceException();
 
-        return new Compliance(descr.trim(), leftAnswers, rightAnswers);
+        int size = 0;
+        for (int i = 0; i < 4; i++){
+            if (!leftAnswers[i].equals("")){
+                size++;
+            }
+        }
+        String[] res_left_answers = new String[size];
+
+        for (int i = 0, j = 0; i < 4; i++){
+            if(!leftAnswers[i].equals("")){
+                res_left_answers[j] = leftAnswers[i];
+                j++;
+            }
+        }
+
+        String[] res_right_answers = new String[size];
+        for (int i = 0, j = 0; i < 4; i++){
+            if(!rightAnswers[i].equals("")){
+                res_right_answers[j] = rightAnswers[i];
+                j++;
+            }
+        }
+
+        return new Compliance(descr.trim(), res_left_answers, res_right_answers);
     }
 
     public void clearSingleChoiceTab() {
@@ -250,6 +315,8 @@ public class Controller {
 
             System.out.println(sa);////////////////TODO dao
 
+            dataBaseDao.insertSingle(sa.getDescription(), sa.getAnswers(), sa.getRightAnswer());
+
             clearSingleChoiceTab();
             AlertCreator.showOkDialog("OK", "Операція пройшла успішно", "");
 
@@ -272,6 +339,8 @@ public class Controller {
             mch = createMultipleChoice();
 
             System.out.println(mch);////////////////TODO dao
+
+            dataBaseDao.insertMultiple(mch.getDescription(),mch.getAnswers(),mch.getRightAnswers());
 
             clearMultipleChoiceTab();
             AlertCreator.showOkDialog("OK", "Операція пройшла успішно", "");
@@ -296,13 +365,10 @@ public class Controller {
 
             System.out.println(c);////////////////TODO dao
 
+            dataBaseDao.insertCompliance(c.getDescription(),c.getAnswers(),c.getRightAnswers());
             clearComplianceTab();
             AlertCreator.showOkDialog("OK", "Операція пройшла успішно", "");
 
-        } catch (EmptySelectedAnswerException e) {
-            AlertCreator.showEmptySelectedAnswerAlert();
-        } catch (NoSelectedAnswerException e1) {
-            AlertCreator.showNoSelectedAnswerAlert();
         } catch (EmptyQuestionDescriptionException e2) {
             AlertCreator.showEmptyQuestionDescriptionAlert();
         } catch (OneSideComplianceException e3) {
