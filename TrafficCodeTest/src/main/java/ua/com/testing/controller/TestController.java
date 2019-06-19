@@ -84,13 +84,11 @@ public class TestController extends HttpServlet {
         if (test.getQuestions().get(question - 1).getType() == Type.SINGLE) {
             String answer = req.getParameter("answer");
 
-            //answer=encode(new String[]{answer})[0];
-
             test.setAnswer(question - 1, findSingleAnswer(answer, test.getQuestions().get(question-1).getQuestions()));
         } else if (test.getQuestions().get(question - 1).getType() == Type.MULTI) {
             String answers[] = req.getParameterValues("answer");
 
-            test.setAnswer(question - 1, findMultiAnswer(answers, test.getQuestions().get(question).getQuestions()));
+            test.setAnswer(question - 1, findMultiAnswer(answers, test.getQuestions().get(question-1).getQuestions()));
         } else {
             String answers[] = req.getParameterValues("answer");
 
@@ -102,18 +100,6 @@ public class TestController extends HttpServlet {
         req.getSession().setAttribute("rightanswers", test.getAllRightCount());
     }
 
-    private String[] encode(String[] text){
-        String[] res=new String[text.length];
-        for (int i = 0; i < text.length; i++) {
-            try {
-                if(text[i]!=null)
-                res[i]=URLEncoder.encode(text[i], java.nio.charset.StandardCharsets.UTF_8.toString());
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-        }
-        return res;
-    }
 
     private byte findSingleAnswer(String answer, String[] answers) {
         for (byte i = 1; i <= answers.length; i = (byte) (i + 1)) {
