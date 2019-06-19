@@ -11,6 +11,7 @@ public class Connector {
     private static final String USER_NAME = "root";
     private static final String PASSWORD = "admin";
 
+    //get connection object
     public Connection getConnection() {
         try {
             DriverManager.registerDriver(new Driver());

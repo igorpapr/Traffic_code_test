@@ -15,10 +15,6 @@ public class Compliance extends Question {
         return rightAnswers;
     }
 
-    public void setRightAnswers(String[] rightAnswers) {
-        this.rightAnswers = rightAnswers;
-    }
-
     @Override
     public String toString() {
         return "Compliance{" +

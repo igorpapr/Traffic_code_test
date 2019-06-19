@@ -13,6 +13,7 @@ public class DataBaseDao {
         this.connector = connector;
     }
 
+    //insert SingleChoiceQuestion to database
     public void insertSingle(String description, String[] questions, byte rightAnswer) {
         try (Connection connection = connector.getConnection()) {
             PreparedStatement preparedStatement =
@@ -43,6 +44,7 @@ public class DataBaseDao {
         }
     }
 
+    //insert MultipleChoiceQuestion to database
     public void insertMultiple(String description, String[] questions, byte[] rightAnswers) {
         try (Connection connection = connector.getConnection()) {
             PreparedStatement preparedStatement =
@@ -57,7 +59,7 @@ public class DataBaseDao {
             String answers = "";
 
             for (int i = 0; i < rightAnswers.length; i++) {
-                answers += String.valueOf(rightAnswers[i]) +( i < rightAnswers.length - 1 ? "_" : "");
+                answers += String.valueOf(rightAnswers[i]) + (i < rightAnswers.length - 1 ? "_" : "");
             }
 
             for (String question : questions) {
@@ -77,6 +79,7 @@ public class DataBaseDao {
         }
     }
 
+    //insert ComplianceQuestion to database
     public void insertCompliance(String description, String[] questions, String[] answers) {
         try (Connection connection = connector.getConnection()) {
             PreparedStatement preparedStatement =
@@ -119,6 +122,7 @@ public class DataBaseDao {
         }
     }
 
+    //get id of last row in the table
     private long getLastId(String description) {
         try (Connection connection = connector.getConnection()) {
             PreparedStatement preparedStatement =
@@ -128,17 +132,12 @@ public class DataBaseDao {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            long id=-1L;
+            long id = -1L;
 
             while (resultSet.next()) {
                 id = resultSet.getLong("id");
             }
-
             return id;
-
-
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

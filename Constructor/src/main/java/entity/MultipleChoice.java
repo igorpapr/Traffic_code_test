@@ -15,10 +15,6 @@ public class MultipleChoice extends Question {
         return rightAnswers;
     }
 
-    public void setRightAnswers(byte[] rightAnswers) {
-        this.rightAnswers = rightAnswers;
-    }
-
     @Override
     public String toString() {
         return "MultipleChoice{" +
