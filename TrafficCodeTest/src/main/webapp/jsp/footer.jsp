@@ -9,7 +9,7 @@
 
 <footer class="fixed-bottom">
     <!-- Copyright -->
-    <div class="text-center py-3">© 2018 Copyright:
+    <div class="text-center py-3">© 2019 Copyright:
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Ke4a Team
         </button>

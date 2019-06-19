@@ -14,6 +14,7 @@
 <jsp:include page="header.jsp"/>
 <%@page pageEncoding="UTF-8"%>
 <body>
+
 <div class="col-xs-1" align="center" style="margin: 10% 10% 3%">
     <p>${tests[question-1].description}</p>
     <form action="" method="post">
@@ -23,6 +24,7 @@
                 <c:forEach begin="1" end="4" var="i">
                     <c:choose>
                         <c:when test="${answers[question-1].answer == i}">
+                            ${answers[question-1].answer}
                             <input type="radio" name="answer" value="${tests[question-1].questions[i-1]}"
                                    checked/> ${tests[question-1].questions[i-1]}<br>
                         </c:when>
