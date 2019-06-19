@@ -16,16 +16,8 @@ public abstract class Question {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String[] getAnswers() {
         return answers;
-    }
-
-    public void setAnswers(String[] answers) {
-        this.answers = answers;
     }
 
     @Override

@@ -12,6 +12,7 @@
 --%>
 
 <jsp:include page="header.jsp"/>
+<%@page pageEncoding="UTF-8"%>
 <body>
 
 <div class="col-xs-1" align="center" style="margin: 10% 10% 3%">

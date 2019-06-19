@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 public class TestController extends HttpServlet {
     @Override
@@ -72,13 +74,19 @@ public class TestController extends HttpServlet {
 
     private void getAnswers(HttpServletRequest req, HttpServletResponse resp) {
         int question = Integer.valueOf(req.getParameter("question"));
-
+        try {
+            req.setCharacterEncoding("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         Test test = (Test) req.getSession().getAttribute("test");
 
         if (test.getQuestions().get(question - 1).getType() == Type.SINGLE) {
             String answer = req.getParameter("answer");
 
-            test.setAnswer(question - 1, findSingleAnswer(answer, test.getQuestions().get(question).getQuestions()));
+            //answer=encode(new String[]{answer})[0];
+
+            test.setAnswer(question - 1, findSingleAnswer(answer, test.getQuestions().get(question-1).getQuestions()));
         } else if (test.getQuestions().get(question - 1).getType() == Type.MULTI) {
             String answers[] = req.getParameterValues("answer");
 
@@ -94,9 +102,23 @@ public class TestController extends HttpServlet {
         req.getSession().setAttribute("rightanswers", test.getAllRightCount());
     }
 
+    private String[] encode(String[] text){
+        String[] res=new String[text.length];
+        for (int i = 0; i < text.length; i++) {
+            try {
+                if(text[i]!=null)
+                res[i]=URLEncoder.encode(text[i], java.nio.charset.StandardCharsets.UTF_8.toString());
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return res;
+    }
+
     private byte findSingleAnswer(String answer, String[] answers) {
         for (byte i = 1; i <= answers.length; i = (byte) (i + 1)) {
-            if (answers[i - 1].equals(answer)) {
+            byte ifs= (byte) (i-1);
+            if (answers[ifs].equals(answer)) {
                 return i;
             }
         }

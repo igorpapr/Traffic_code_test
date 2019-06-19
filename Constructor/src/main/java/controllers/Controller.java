@@ -88,6 +88,7 @@ public class Controller {
     @FXML // fx:id="single_radio_4"
     private RadioButton single_radio_4;
 
+    //gets correct answer
     private byte getSingleRightAnswer() throws NoSelectedAnswerException {
         Object res = single_group.getSelectedToggle();
         if (res == null)
@@ -96,6 +97,7 @@ public class Controller {
     }
 
 
+    //collects correct answers
     private byte[] getMultipleRightAnswers() throws NoSelectedAnswerException {
         boolean[] tmp = new boolean[4];
         if (multiple_checkbox_1.isSelected()) {
@@ -132,6 +134,7 @@ public class Controller {
     }
 
 
+    //gets all the data from fields and transforms it to the object
     private SingleChoice createSingleChoice() throws EmptySelectedAnswerException,
             NoSelectedAnswerException, EmptyQuestionDescriptionException {
         String descr;
@@ -155,20 +158,85 @@ public class Controller {
         }
 
         int size = 0;
-        for (int i = 0; i < 4; i++){
-            if (!answers[i].equals("")){
+        for (int i = 0; i < 4; i++) {
+            if (!answers[i].equals("")) {
                 size++;
             }
         }
         String[] res_answers = new String[size];
 
-        for (int i = 0, j = 0; i < 4; i++){
-            if(!answers[i].equals("")){
+        for (int i = 0, j = 0; i < 4; i++) {
+            if (!answers[i].equals("")) {
                 res_answers[j] = answers[i];
                 j++;
             }
         }
         return new SingleChoice(descr, res_answers, rightAnswer);
+    }
+
+    //gets all the data from fields and transforms it to the object
+    private Compliance createCompliance() throws EmptyQuestionDescriptionException, OneSideComplianceException {
+        String descr;
+        String[] leftAnswers;
+        String[] rightAnswers;
+
+        descr = description.getText().trim();
+        if (descr.equals(""))
+            throw new EmptyQuestionDescriptionException();
+
+        leftAnswers = new String[4];
+        leftAnswers[0] = compliance_answer_1_1.getText().trim();
+        leftAnswers[1] = compliance_answer_2_1.getText().trim();
+        leftAnswers[2] = compliance_answer_3_1.getText().trim();
+        leftAnswers[3] = compliance_answer_4_1.getText().trim();
+
+        rightAnswers = new String[4];
+        rightAnswers[0] = compliance_answer_1_2.getText().trim();
+        rightAnswers[1] = compliance_answer_2_2.getText().trim();
+        rightAnswers[2] = compliance_answer_3_2.getText().trim();
+        rightAnswers[3] = compliance_answer_4_2.getText().trim();
+
+        //check for onesidecompliance exception
+        for (int i = 0; i < 4; i++) {
+            if ((leftAnswers[i].equals("") && !rightAnswers[i].equals("")) || (!leftAnswers[i]
+                    .equals("") && rightAnswers[i].equals(""))) {
+                throw new OneSideComplianceException();
+            }
+        }
+        //check for all fields emptiness
+        boolean empty = true;
+        for (int i = 0; i < 4; i++) {
+            if (!leftAnswers[i].equals("") && !rightAnswers[i].equals("")) {
+                empty = false;
+            }
+        }
+        if (empty)
+            throw new OneSideComplianceException();
+
+        int size = 0;
+        for (int i = 0; i < 4; i++) {
+            if (!leftAnswers[i].equals("")) {
+                size++;
+            }
+        }
+        String[] res_left_answers = new String[size];
+
+        for (int i = 0, j = 0; i < 4; i++) {
+            if (!leftAnswers[i].equals("")) {
+                res_left_answers[j] = leftAnswers[i];
+                j++;
+            }
+        }
+
+        String[] res_right_answers = new String[size];
+        for (int i = 0, j = 0; i < 4; i++) {
+            if (!rightAnswers[i].equals("")) {
+                res_right_answers[j] = rightAnswers[i];
+                j++;
+            }
+        }
+
+        return new Compliance(descr.trim(), res_left_answers, res_right_answers);
     }
 
     private MultipleChoice createMultipleChoice() throws EmptySelectedAnswerException,
@@ -193,15 +261,15 @@ public class Controller {
         }
 
         int size = 0;
-        for (int i = 0; i < 4; i++){
-            if (!answers[i].equals("")){
+        for (int i = 0; i < 4; i++) {
+            if (!answers[i].equals("")) {
                 size++;
             }
         }
         String[] res_answers = new String[size];
 
-        for (int i = 0, j = 0; i < 4; i++){
-            if(!answers[i].equals("")){
+        for (int i = 0, j = 0; i < 4; i++) {
+            if (!answers[i].equals("")) {
                 res_answers[j] = answers[i];
                 j++;
             }
@@ -210,68 +278,7 @@ public class Controller {
         return new MultipleChoice(descr.trim(), res_answers, rightAnswers);
     }
 
-    private Compliance createCompliance() throws EmptyQuestionDescriptionException, OneSideComplianceException {
-        String descr;
-        String[] leftAnswers;
-        String[] rightAnswers;
-
-        descr = description.getText().trim();
-        if (descr.equals(""))
-            throw new EmptyQuestionDescriptionException();
-
-        leftAnswers = new String[4];
-        leftAnswers[0] = compliance_answer_1_1.getText().trim();
-        leftAnswers[1] = compliance_answer_2_1.getText().trim();
-        leftAnswers[2] = compliance_answer_3_1.getText().trim();
-        leftAnswers[3] = compliance_answer_4_1.getText().trim();
-
-        rightAnswers = new String[4];
-        rightAnswers[0] = compliance_answer_1_2.getText().trim();
-        rightAnswers[1] = compliance_answer_2_2.getText().trim();
-        rightAnswers[2] = compliance_answer_3_2.getText().trim();
-        rightAnswers[3] = compliance_answer_4_2.getText().trim();
-
-        for(int i = 0; i < 4; i++){
-            if ((leftAnswers[i].equals("") && !rightAnswers[i].equals("")) ||( !leftAnswers[i]
-                    .equals("") && rightAnswers[i].equals(""))){
-                throw new OneSideComplianceException();
-            }
-        }
-        boolean empty = true;
-        for(int i = 0; i < 4; i++){
-            if(!leftAnswers[i].equals("") && !rightAnswers[i].equals("")){
-                empty = false;
-            }
-        }
-        if(empty)
-            throw new OneSideComplianceException();
-
-        int size = 0;
-        for (int i = 0; i < 4; i++){
-            if (!leftAnswers[i].equals("")){
-                size++;
-            }
-        }
-        String[] res_left_answers = new String[size];
-
-        for (int i = 0, j = 0; i < 4; i++){
-            if(!leftAnswers[i].equals("")){
-                res_left_answers[j] = leftAnswers[i];
-                j++;
-            }
-        }
-
-        String[] res_right_answers = new String[size];
-        for (int i = 0, j = 0; i < 4; i++){
-            if(!rightAnswers[i].equals("")){
-                res_right_answers[j] = rightAnswers[i];
-                j++;
-            }
-        }
-
-        return new Compliance(descr.trim(), res_left_answers, res_right_answers);
-    }
-
+    //clear all fields of single choice tab
     public void clearSingleChoiceTab() {
         description.clear();
         single_answer_1.clear();
@@ -281,6 +288,7 @@ public class Controller {
         single_group.getSelectedToggle().setSelected(false);
     }
 
+    //clear all fields of Multiple choice tab
     public void clearMultipleChoiceTab() {
         description.clear();
         multiple_answer_1.clear();
@@ -294,6 +302,7 @@ public class Controller {
 
     }
 
+    //clear all fields of comliance tab
     public void clearComplianceTab() {
         description.clear();
         compliance_answer_1_1.clear();
@@ -313,8 +322,10 @@ public class Controller {
         try {
             sa = createSingleChoice();
 
-            System.out.println(sa);////////////////TODO dao
+            //logging
+            System.out.println(sa);
 
+            //dao
             dataBaseDao.insertSingle(sa.getDescription(), sa.getAnswers(), sa.getRightAnswer());
 
             clearSingleChoiceTab();
@@ -338,9 +349,11 @@ public class Controller {
         try {
             mch = createMultipleChoice();
 
-            System.out.println(mch);////////////////TODO dao
+            //logging
+            System.out.println(mch);
 
-            dataBaseDao.insertMultiple(mch.getDescription(),mch.getAnswers(),mch.getRightAnswers());
+            //dao
+            dataBaseDao.insertMultiple(mch.getDescription(), mch.getAnswers(), mch.getRightAnswers());
 
             clearMultipleChoiceTab();
             AlertCreator.showOkDialog("OK", "Операція пройшла успішно", "");
@@ -363,9 +376,12 @@ public class Controller {
         try {
             c = createCompliance();
 
-            System.out.println(c);////////////////TODO dao
+            //just logging
+            System.out.println(c);
 
-            dataBaseDao.insertCompliance(c.getDescription(),c.getAnswers(),c.getRightAnswers());
+            //dao
+            dataBaseDao.insertCompliance(c.getDescription(), c.getAnswers(), c.getRightAnswers());
+
             clearComplianceTab();
             AlertCreator.showOkDialog("OK", "Операція пройшла успішно", "");
 
@@ -373,14 +389,14 @@ public class Controller {
             AlertCreator.showEmptyQuestionDescriptionAlert();
         } catch (OneSideComplianceException e3) {
             AlertCreator.showOneSideComplianceAlert();
-        }catch (Exception e4) {
+        } catch (Exception e4) {
             e4.printStackTrace();
         }
     }
 
 
     @FXML
-        // This method is called by the FXMLLoader when initialization is complete
+// This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert compliance_answer_1_1 != null : "fx:id=\"compliance_answer_1_1\" was not injected: check your FXML file 'main.fxml'.";
         assert compliance_answer_1_2 != null : "fx:id=\"compliance_answer_1_2\" was not injected: check your FXML file 'main.fxml'.";
@@ -412,7 +428,7 @@ public class Controller {
         assert single_radio_3 != null : "fx:id=\"single_radio_3\" was not injected: check your FXML file 'main.fxml'.";
         assert single_radio_4 != null : "fx:id=\"single_radio_4\" was not injected: check your FXML file 'main.fxml'.";
 
-        // Initialize your logic here: all @FXML variables will have been injected
+        // all @FXML variables will have been injected
         single_radio_1.setUserData((byte) 1);
         single_radio_2.setUserData((byte) 2);
         single_radio_3.setUserData((byte) 3);
@@ -422,7 +438,5 @@ public class Controller {
         multiple_checkbox_2.setUserData((byte) 2);
         multiple_checkbox_3.setUserData((byte) 3);
         multiple_checkbox_4.setUserData((byte) 4);
-
     }
-
 }
